@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hesablama</title>
+    <style>
+        input{width: 40px; margin: 0 10px; color:red; border: solid 2px, red}
+        button{color:red; border: solid 2px, red; border-radius: 5px;}
+        p{ color: orange}
+    </style>
+</head>
+    <body>
+        <input type="text" id="a" />
+        <input type="text" id="b" />
+        <input type="text" id="c" />
+        <button onclick="hesabla()">OK</button>
+
+        <div>
+            <p>Cem: <span id="cem"></span></p>
+            <p>Ort: <span id="orta"></span></p>
+            <p>Hasil: <span id="hasil"></span></p>
+        </div>
+
+        <script>
+            let a = document.getElementById("a")
+            let b = document.getElementById("b")
+            let c = document.getElementById("c")
+            let cem = document.getElementById("cem")
+            let orta = document.getElementById("orta")
+            let hasil = document.getElementById("hasil")
+
+            function hesabla(){
+               cem.innerHTML = +a.value + +b.value + +c.value
+               orta.innerHTML = (+a.value + +b.value + +c.value)/3 
+               hasil.innerHTML = a.value*b.value*c.value
+            }
+        </script>
+    </body>
+</html>

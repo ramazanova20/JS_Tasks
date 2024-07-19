@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deyisme</title>
+    <style>
+        input{color:orange; border: solid 2px}
+        button{border: solid 2px}
+    </style>
+</head>
+<body>
+    <input id="a"></input>
+    <button id="btn" onclick="deyis()"><==></button>
+    <input id="b"></input>
+    
+    <script>
+        let a = document.getElementById('a')
+        let b = document.getElementById('b')
+        let c=""
+
+        function deyis(){
+           c=a.value
+           a.value=b.value
+           b.value=c
+        }
+        
+    </script>
+</body>
+</html>
