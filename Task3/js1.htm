@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        #slider {
+            height: 60vh;
+            width: 60%;
+            box-shadow: 0 0 10px #ccc;
+            background: url("img/img1.jpg") center/cover;
+            /* background-color: red; */
+            margin: auto;
+            position: relative;
+        }
+
+        #btn1,
+        #btn2 {
+            position: absolute;
+            height: 200px;
+            font-size: 50px;
+            border: none;
+            background-color: transparent;
+        }
+
+        #btn1 {
+            top: 50%;
+            left: 0;
+        }
+
+        #btn2 {
+            right: 0;
+            top: 50%;
+
+        }
+
+        #btn1,
+        #btn2 {
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="slider">
+            <button id="btn1">❮</button>
+            <button onclick="handleSlider()"  id="btn2">❯</button>
+            <button onclick="handleSliderBack()"  id="btn2">❯</button>
+        </div>
+    </main>
+
+
+    <script>
+
+        const slider = document.getElementById("slider")
+        let say = 0
+        function handleSlider() {
+            say++
+            slider.style.background = `url("img/img${say}.jpg") center/cover`;
+            console.log(say);
+            if(say > 4 ) say = 0
+            
+        }
+        function handleSliderBack(){
+            say--
+            autoplay:true
+            if(say < 0) say = 4
+            slider.style.background = `url("img/img${say}.jpg") center/cover`
+            
+        }
+        setInterval(handleSlider,1000)
+
+    </script>
+
+
+</body>
+
+</html>

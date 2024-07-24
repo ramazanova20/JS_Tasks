@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deyisme</title>
+    <style>
+        /* input{width: 80px; border: solid 2px} */
+        /* button{width: 40px; border: solid 2px} */
+        ul{list-style: none;}
+    </style>
+</head>
+<body>
+    
+
+    <div class="contain">
+        <h1>To-Do Listimiz!</h1>
+        <input id="a" placeholder="Daxil edin..."></input>
+         <button id="btn" onclick="gonder()">Gonder</button>
+    </div>
+    <ul>
+        <!-- <li></li>
+        <li></li>
+        <li></li> -->
+    </ul>
+    <script>
+        const ul=document.querySelector("ul")
+        const a = document.querySelector('#a')
+        // let btn = document.getElementById('btn')
+
+        function gonder(){
+           ul.innerHTML +=`<li> ${a.value}</li>`
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hesablama</title>
+    <style>
+        input{width: 40px; margin: 0 10px; color:red; border: solid 2px, red}
+        button{color:red; border: solid 2px, red; border-radius: 5px;}
+        p{ color: orange}
+    </style>
+</head>
+    <body>
+        <input type="text" id="a" />x<sup>2</sup>+
+        <input type="text" id="b" />x+
+        <input type="text" id="c" />
+        <button onclick="hesabla()"> = </button>0
+
+        <div>
+            <p>Diskriminant: <span id="Diskriminant"></span></p>
+            <p>x1: <span id="x1"></span></p>
+            <p>x2: <span id="x2"></span></p>
+        </div>
+
+        <script>
+            let a = document.getElementById("a")
+            let b = document.getElementById("b")
+            let c = document.getElementById("c")
+            let Diskriminant = document.getElementById("Diskriminant")
+            let x1 = document.getElementById("x1")
+            let x2 = document.getElementById("x2")
+
+            function hesabla(){
+                Diskriminant.innerHTML =  b.value ** 2 - (4 * a.value * c.value)
+                let D = Diskriminant.innerHTML
+                if(D> 0){
+                 x1.innerHTML = ( - +b.value + Math.sqrt(D)) / (2 * +a.value)
+                 x2.innerHTML = ( - +b.value - Math.sqrt(D)) / (2 * +a.value)
+                }
+                else if (D == 0){
+                 x1.innerHTML = x2.innerHTML = - +b.value / (2 * +a.value)
+                }
+                else{
+                 x1.innerHTML = x2.innerHTML = "∅"
+                }
+            }
+        </script>
+    </body>
+</html>

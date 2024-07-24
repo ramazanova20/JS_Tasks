@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hesablama</title>
+    <style>
+        input{width: 40px; margin: 0 10px; color:red; border: solid 2px, red}
+        button{width: 20px; height: 20px; color:red; border: solid 2px, red; border-radius: 5px;}
+        p{ color: orange}
+    </style>
+</head>
+    <body>
+        <input type="text" id="a" />
+        <button id="result" onclick="muqayiseEt()"></button>
+        <input type="text" id="b" />
+
+        <script>
+            let a = document.getElementById("a")
+            let b = document.getElementById("b")
+            let result = document.getElementById("result")
+    
+            function muqayiseEt(){
+                if (a.value < b.value) {
+                    result.innerHTML = "<";
+                } else if (a.value == b.value) c.innerHTML = "=";
+                else {
+                    result.innerHTML = ">";
+                }
+                if (b.value < a.value) {
+                    result.innerHTML = "<";
+                } else if (b.value == a.value) c.innerHTML = "=";
+                else {
+                    result.innerHTML = ">";
+                }
+            }
+        </script>
+    </body>
+</html>
