@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        input {
+            width: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    
+   
+        <input type="number" id="a" />
+        <button onclick="azalma()">Ok</button>
+        <div id="cvb"></div>
+
+    <script>
+        const a = document.querySelector("#a")
+        const cvb = document.querySelector("#cvb")
+
+        function azalma(){
+        let kod ='Here is answer'
+        for(let i=a.value; i >= 1; i--)
+    {
+          
+        kod += ',' + i
+    }
+        
+        cvb.innerHTML = kod
+        }
+    
+        
+    </script>
+</body>
+
+</html>
