@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <style>
+            table { border-collapse: collapse; font: bold 1.6em Arial }
+            td { border: 1px solid #333; text-align: center; width: 80px; height: 80px; }
+        </style>
+    </head>
+    <body>
+        <table id="cdv"></table>
+
+        <script>
+            const cdv = document.getElementById("cdv")
+            let kod = ''
+            // let say= `${j}+${i}`
+            
+            for(let i = 1; i <= 8; i++) {
+                kod += '<tr>'
+                
+                for (let j = 1; j <= 8; j++) {
+                    // let color = (i + j) % 2 ? '' : ''
+                    if( i == 8 || i == 1 || (j>=4 && j<=5) || i==j || (i==j-1 || j==i-1)){
+                        let color = '#2ff924'
+                        kod += `<td style="background: ${color}"></td>`        
+                        
+                            }
+                    else{
+                        kod += `<td> ${''} </td>`
+                            }
+                }
+                kod += '</tr>'
+            }
+            cdv.innerHTML = kod
+        </script>
+    </body>
+</html>
