@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <input type="text" id="ad">
+    <p id="herf"></p>
+    <button onclick="sec()">Random Reng</button>
+    <br />
+    <h1 id="res"></h1>
+
+    <script>
+        const ad = document.querySelector("#ad")
+        const herf = document.querySelector("#herf")
+        const res = document.querySelector("#res")
+        
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function sec() {
+            const inputText = ad.value;
+            let kod = '';
+
+            for (let i = 0; i < inputText.length; i++) {
+                let reng = `rgb(${rand(0, 255)},${rand(0, 255)},${rand(0, 255)})`;
+                kod += `<span style="color: ${reng};">${inputText[i]}</span>`;
+            }
+
+            herf.innerHTML = kod;
+            res.style.color = `rgb(${rand(0, 255)},${rand(0, 255)},${rand(0, 255)})`;
+        }
+    </script>
+</body>
+
+</html>

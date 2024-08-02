@@ -20,18 +20,32 @@
                 kod += '<tr>'
                 
                 for (let j = 1; j <= 8; j++) {
-                    // let color = (i + j) % 2 ? '' : ''
+                    let color = (i + j) % 2 ? '' : ''
                     if( i == 8 || i == 1 || (j>=4 && j<=5) || i==j || (i==j-1 || j==i-1)){
                         let color = '#2ff924'
                         kod += `<td style="background: ${color}"></td>`        
                         
                             }
+                    for (let j = 1; j <= 8; j++) {
+                        if(i == 1 || i == 8 ){
+                            let color = '#2ff924'
+                                kod += `<td style="background: ${color}"></td>` 
+                        }
+                            else if ( i == j || (i +j) == 9 || (j == 4) || ( j == 5)) {
+                                let color = '#2ff924'
+                                kod += `<td style="background: ${color}"></td>` 
+                            }
+                            else if ( (i ==2 || i==7 ) && (j==3 || j==6)) {
+                                let color = '#2ff924'
+                                kod += `<td style="background: ${color}"></td>` 
+                            }
                     else{
-                        kod += `<td> ${''} </td>`
+                        kod += `<td> i${i}j ${j} </td>`
                             }
                 }
                 kod += '</tr>'
             }
+        }
             cdv.innerHTML = kod
         </script>
     </body>

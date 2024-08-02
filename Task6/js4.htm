@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="text" id="ad">
+    <p id="herf"></p>
+    <button onclick="sec()">Random Uppercase</button>
+    <br />
+    <h1 id="res"></h1>
+
+    <script>
+        const ad = document.querySelector("#ad");
+        const herf = document.querySelector("#herf");
+        const res = document.querySelector("#res");
+
+        function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function sec() {
+            const inputText = ad.value;
+            const randomIndex = rand(0, inputText.length - 1);
+            let modifiedText = '';
+
+            for (let i = 0; i < inputText.length; i++) {
+                if (i === randomIndex) {
+                    modifiedText += `<span>${inputText[i].toUpperCase()}</span>`;
+                } else {
+                    modifiedText += `<span>${inputText[i]}</span>`;
+                }
+            }
+
+            herf.innerHTML = modifiedText;
+        }
+    </script>
+</body>
+
+</html>

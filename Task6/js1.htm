@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style>
+            ul { list-style: none; padding: 0;}
+            li { padding: 5px 0;}
+            li > input { width: 30px; text-align: right;}
+        </style>
+    </head>
+    <body>
+        <button onclick="add()"> + </button>
+        <ul id="inp">
+            <li><input type="text" id="a0" /></li>
+            <li><input type="text" id="a1" /></li>
+        </ul>
+        <button onclick="topla()"> = </button>
+        <h1 id="res"></h1>
+
+        <script>
+            const inp = document.getElementById("inp")
+            const res = document.getElementById("res")
+            let arr = 2
+
+            function add() {
+                arr++
+                show()
+            }
+            
+            function show() {
+                let kod = ''
+                for (let i = 0; i < arr; i++) {
+                    kod += `<li><input type="text" id="a${i}" /></li>`
+                }
+                inp.innerHTML = kod
+            }
+            topla()
+            function topla() {
+                let cem = 0;
+                for (let i = 0; i < arr; i++) {
+                    const input = document.getElementById(`a${i}`);
+                    cem += Number(input.value) || 0;  
+                }
+                res.innerHTML = cem;
+        }
+        </script>
+    </body>
+</html>
