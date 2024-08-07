@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <style>
+            table { border-collapse: collapse; font: bold 1.6em Arial; margin: 10vh auto }
+            td { text-align: center; width: 150px; height: 150px; border:solid 3px; font: bold 2em Arial }
+           #saat{text-align: center;}
+        </style>
+    </head>
+    <body>
+        <h1 id="saat"></h1>
+        <table id="cdv"></table>
+        
+
+        <script>
+            const cdv = document.getElementById("cdv")
+            
+            function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+            let order=1
+            let kod=''
+            let arr=[]
+            let timer=setInterval(count,1000)
+            let saniye=3
+            // let n=1
+            for(let i=1;i<=16;i++){
+                arr.push(i)
+            }
+            
+            for (let i = 1; i <= 4; i++) {
+                kod += '<tr>'
+                for (let j = 1; j <= 4; j++) {
+                    let ind=rand(0,arr.length-1)
+                   kod +=  `<td onclick="ok(this)">${arr[ind]}</td>`
+                   arr.splice(ind,1)
+                }
+                kod += '</tr>'
+            }
+            cdv.innerHTML = kod
+            function count(){
+                
+                if(saniye ){
+                    saat.innerHTML=saniye--
+                    
+                }
+                else{
+                    
+                    gameOver(false)
+                }
+            }
+            function gameOver(res){
+                clearInterval(timer)
+                
+                if(res){
+                    alert("aferin")
+                }
+                else{
+                    alert("gameOver")
+                   
+                }
+                order=0
+            }
+            function ok(cell){ 
+                if(td.innerHTML==order){
+                td.style.background='green'
+                order++
+                if (order>16) gameover(true)
+                } 
+
+            }
+            cdv.innerHTML=kod
+        </script>
+    </body>
+</html>

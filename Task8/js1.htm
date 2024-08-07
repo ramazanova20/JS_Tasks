@@ -6,45 +6,40 @@
         <style>
             ul { list-style: none; padding: 0;}
             li { padding: 5px 0;}
-            li > input { width: 30px; text-align: right;}
+            h1 { width: 30px; text-align: right;}
         </style>
     </head>
     <body>
         <button onclick="add()"> + </button>
+        <button onclick="sil()"> - </button>
         <ul id="inp">
-            <li><input type="text" id="a0" /></li>
-            <li><input type="text" id="a1" /></li>
+            <li><input type="text" id="a0" placeholder="Xezer" /></li>
         </ul>
-        <button onclick="topla()"> = </button>
-        <h1 id="res"></h1>
+        
 
         <script>
             const inp = document.getElementById("inp")
             const res = document.getElementById("res")
-            let arr = 2
+            let arr = 1
 
             function add() {
                 arr++
+                show()
+            }
+            function sil() {
+                arr--
                 show()
             }
             
             function show() {
                 let kod = ''
                 for (let i = 0; i < arr; i++) {
-                    kod += `<li><input type="text" id="a${i}" /></li>`
+                    kod += `<li><input type="text" id="a${i}" placeholder="Xezer"/></li>`
                 }
                 
                 inp.innerHTML = kod
             }
-            topla()
-            function topla() {
-                let cem = 0;
-                for (let i = 0; i < arr; i++) {
-                    const input = document.getElementById(`a${i}`);
-                    cem += +(input.value);  
-                }
-                res.innerHTML = cem;
-        }
+        
         </script>
     </body>
 </html>
