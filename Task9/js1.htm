@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        input { 
+            width: 100px; 
+            height: 40px; 
+            margin: 0 10px; 
+            color: red; 
+            border: solid 2px red;
+        }
+        button { 
+            width: 80px; 
+            height: 40px; 
+            color: red; 
+            border: solid 2px red; 
+            border-radius: 5px; 
+        }
+        h1 { text-align: center; }
+    </style>
+</head>
+<body>
+    <input type="text" id="a" placeholder="Type here..." />
+    <button id="b" onclick="ok()">OK</button>
+    <h1 id="ntc"></h1>
+
+    <script>
+        const a = document.querySelector("#a");
+        const ntc = document.querySelector("#ntc");
+        let index = 0;
+        let arr = [];
+
+        function ok() {
+            const text = a.value; 
+            arr = text.split("");
+            index = 0;
+            ntc.textContent = ""; 
+            write();
+        }
+
+        function write() {
+            if (index < arr.length) {
+                ntc.textContent += arr[index];
+                index++;
+                setTimeout(write, 500);
+            }
+        }
+    </script>
+</body>
+</html>
