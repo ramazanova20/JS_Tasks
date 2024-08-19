@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Telebe {
+            constructor(ad, il, boy){
+                this.name = ad
+                this.year = il
+                this.height = boy
+            }
+            
+            getAge() {
+                return new Date().getFullYear()-this.year
+            }
+            sayHi(){
+                return `Salam, adim ${this.name}. ${this.getAge()} yasim var`
+            }
+            // return this
+        }
+        let tlb1=new Telebe('Sebine', 2003, 164)
+        let tlb2=new Telebe('Mahmud', 2002, 185)
+        let tlb3=new Telebe('Guler', 2005, 160)
+        let tlb4=new Telebe('Nurlan', 2004, 185)
+
+
+        // function Telebe(ad, il, boy) {
+        //     // let this={}
+        //     this.name = ad
+        //     this.year = il
+        //     this.height = boy
+        //     this.getAge=function() {
+        //         return new Date().getFullYear()-this.year
+        //     }
+        //     this.sayHi=function(){
+        //         return `Salam, adim ${this.name}. ${this.getAge()} yasim var`
+        //     }
+        //     // return this
+        // }
+        // let tlb1=new Telebe('Sebine', 2003, 164)
+        // let tlb2=new Telebe('Mahmud', 2002, 185)
+        // let tlb3=new Telebe('Guler', 2005, 160)
+
+        // let tlb1 ={
+        //     name:'Sebine',
+        //     year: 2002,
+        //     height:164,
+        //     getAge() {
+        //         return new Date().getFullYear()-this.year
+        //     },
+        //     sayHi() {
+        //         return `Salam, adim ${this.name}. ${this.getAge()} yasim var`
+        //     }
+        // }
+       
+       
+        // let tlb2 ={
+        //     name:'Mahmud',
+        //     year: 2003,
+        //     height:185,
+        //     getAge() {
+        //         return new Date().getFullYear()-this.year
+        //     },
+        //     sayHi() {
+        //         return `Salam, adim ${this.name}. ${this.getAge()} yasim var`
+        //     }
+        // }
+    </script>
+</body>
+</html>

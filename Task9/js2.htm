@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            /* width: 100%; */
+            position: relative;
+        }
+
+        nav {
+            transition: 1s all;
+            position: absolute;
+            width: 100%;
+            right: -50%;
+            background-color: white;
+        }
+
+        ul {
+            list-style: none;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+
+            li {
+                padding: 7px 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+        }
+
+
+        .right {
+            right: 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <i onclick="show2()" class="fa-solid fa-bars"></i>
+        <nav>
+            <ul id="menu">
+                <li><a href="#">Sirket</a>
+                    <i class="fa-solid fa-arrow-turn-down"></i></li>
+                <li><a href="#">Musteri Reyleri</a>
+                    <i class="fa-solid fa-arrow-turn-down"></i></li>
+                <li><a href="#">Turlar</a>
+                    <i class="fa-solid fa-arrow-turn-down"></i></li>
+                <li><a href="##">Xidmetler</a>
+                    <i class="fa-solid fa-arrow-turn-down"></i></li>
+                <li><a href="##">Emekdaslar</a>
+                    <i class="fa-solid fa-arrow-turn-down"></i></li>
+                <li><a href="##">Azerbaycani Kesf Et</a>
+                    </li>
+                <li><a href="##">Elaqe</a>
+                    </li>
+                <li class="desk_langs langs">
+                    <a class="hover desk_lang lang" href="#">
+                      <img src="img/az.png" alt="" /> AZ</a>
+                    <ul id="langs_menu">
+                        <li>
+                            <a href="#"><img src="img/ru.png" alt="" /> RU</a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/en.png" alt="" /> EN</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="phone" href="tel: 55 597-05-14"><i class="fa-solid fa-phone"></i> (+99455) 597-05-14</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <script>
+        const nav = document.querySelector("nav")
+
+       
+
+        function show2() {
+            nav.classList.toggle("right")
+        }
+
+    </script>
+</body>
+
+</html>

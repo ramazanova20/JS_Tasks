@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="a" />
+    <input type="number" id="b" />
+    <button onclick="ok()">Ok</button>
+    <script>
+        const a = document.getElementById("a")
+        const b = document.getElementById("b")
+
+        // let birincitrf={
+        //     olcu: "2.40",
+
+
+        // }
+        // let ikincitrf={
+        //     olcu: "2.40",
+
+        //     giveOutput: saheHesabla,
+        //     giveOutput: sahePerimetr
+        // }
+        function ok() {
+            let obj = {
+                a: +a.value,
+                b: +b.value,
+                getArea: function () {
+                    return this.a * this.b
+                },
+                getPeriment: perimetr
+            }
+            return obj
+        }
+
+        function perimetr() {
+            return (this.a + this.b) * 2
+        }
+
+
+
+        // function saheHesabla(ok) {
+        //     return this.a * this.b
+        // }
+
+    </script>
+</body>
+
+</html>

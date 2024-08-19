@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="a" type="text" />
+    <button id="b" onclick="yoxla()">OK</button>
+    <h1 id="ntc"></h1>
+    
+    <script>
+        let arr=[]
+        const a = document.getElementById('a');
+        const ntc = document.getElementById('ntc');
+        let i=0
+        for (let i = 0; i < 100; i++) {
+            arr.push(i);
+            
+        }
+        let inputValue = Number(a.value); 
+    function yoxla(){
+        for (let i = 0; i < 100; i++) {
+            let inputValue = Number(a.value); 
+            if (inputValue % 3 === 0 && inputValue % 5 === 0) {
+                ntc.innerHTML = "FizzBuzz";
+            } else if (inputValue % 3 === 0) {
+                ntc.innerHTML = "Fizz";
+            } else if (inputValue % 5 === 0) {
+                ntc.innerHTML = "Buzz";
+            } else {
+                ntc.innerHTML = "The number is not divisible by 3 or 5.";
+            }
+       
+    }
+    }
+    </script>
+</body>
+</html>

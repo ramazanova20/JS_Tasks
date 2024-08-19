@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        const list =document.getElementById("list")
+        let tlb1={
+            name: "Kamal",
+            sex: "male",
+            year: 2000,
+            height: 1.80,
+            getAge: function() {
+                return new Date().getFullYear()-this.year
+            }
+        }
+        let tlb ={
+            name: "Tukezban",
+            sex: "female",
+            year: 2000,
+            height: 1.60,
+            getAge: function() {
+                return new Date().getFullYear()-this.year
+            },
+            sayHi: salamVer
+        }
+
+        function salamVer(){
+            return `Salam, adim ${this.name}. ${this.getAge()} yasim var`
+        }
+        tlb.eye ="brown"
+        delete tlb.eye
+
+        for (const prob in tlb) {
+            // if (Object.prototype.hasOwnProperty.call(object, key)) {
+            //     const element = object[key];
+                
+            // }
+            list.innerHTML +=`<li>${prob}-${tlb[prob]}</li>`
+        }
+    </script>
+</body>
+</html>

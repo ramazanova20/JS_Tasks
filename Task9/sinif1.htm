@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for (let i = 12; i < 1000; i++) {
+            let deyis = 0;
+            for(let j = 1; j <= i; j++){
+                if(i % j == 0) {
+                    deyis++;
+                }
+            }
+            
+            if (deyis == 2) { // Check if 'i' is a prime number
+                let eded = +i.toString().split("").reverse().join("");
+                let yoxlanis = 0;
+                
+                for (let k = 1; k <= eded; k++) {
+                    if (eded % k == 0) {
+                        yoxlanis++;
+                    }
+                }
+                
+                console.log(`Original number: ${i}, Reversed number: ${eded}, Divisors count: ${yoxlanis}`);
+            }
+        }
+    </script>
+</body>
+</html>

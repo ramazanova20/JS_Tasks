@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #oyun {
+            width: 800px;
+            height: 600px;
+            box-shadow: 0 0 10px #333;
+            margin: 10vh auto;
+            position: relative;
+        }
+        #oyun > * {
+            position: absolute;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="game">
+        
+    </div>
+
+    <script>
+        const game = {
+            id: 'game',
+            width: 800,
+            height: 600,
+            color: 'white',
+            radius: 0,
+            elem: document.getElementById('game')
+        };
+
+        const ball = {
+            id: 'ball',
+            width: 30,
+            height: 30,
+            color: 'red',
+            radius: 50,
+            x: 0,
+            y: 0,
+            speedX: 5,
+            speedY: 5,
+            create(main) {
+                main.elem.innerHTML += `<div id="${this.id}"></div>`;
+                this.show()
+            },
+            show() {
+                this.elem = document.getElementById(this.id);
+                // this.elem.style.width = this.width + 'px';
+                this.elem.style.height = this.height + 'px';
+                this.elem.style.backgroundColor = this.color;
+                this.elem.style.borderRadius = this.radius + '%';
+                this.elem.style.position = 'absolute';
+                this.elem.style.left = this.x + 'px';
+                this.elem.style.top = this.y + 'px';
+            },
+            move() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+
+                if (this.y >= maxY || this.y <= 0) {
+                    this.speedY = -this.speedY;
+                }
+
+                if (this.x >= maxX || this.x <= 0) {
+                    this.speedX = -this.speedX;
+                }
+
+                this.elem.style.top = this.y + "px";
+                this.elem.style.left = this.x + "px";
+            }
+        }
+        const bar = {
+            id: 'bar',
+            width: 150,
+            height: 10,
+            color: 'blue',
+            x: 0,
+            
+            speedX: 10,
+            // speedY: null,
+            create(main) {
+                main.elem.innerHTML += `<div id="${this.id}"></div>`;
+                this.show()
+            },
+            show() {
+                this.elem = document.getElementById(this.id);
+                this.elem.style.height = this.height + 'px';
+                this.elem.style.backgroundColor = this.color;
+                this.elem.style.position = 'absolute';
+                this.elem.style.left = this.x + 'px';
+            },
+            move(e) {
+            const bar = document.getElementById('bar');
+            if (e.keyCode == 37 && barX > 0) barX -= 10; 
+            if (e.keyCode == 39 && barX < maxX - 150) barX += 10; 
+            this.show()
+        }
+        }
+        bar.y = game.height-bar.height
+           
+        
+        
+
+        
+        // bar.show();
+        ball.show();
+
+        let barX = 0;
+        const maxY = 570;  
+        const maxX = 770;
+
+        setInterval(() => ball.move(), 40);
+        onkeydown = moveBar;
+
+        
+        bar.create()
+        ball.create()
+    </script>
+</body>
+</html>
